@@ -7,6 +7,7 @@ Bu tablo, kullanıcıların bilgilerini saklamak amacıyla kullanılır. Her kul
 | Sütun Adı     | Tür          | Açıklama                            |
 | ------------- | ------------ | ----------------------------------- |
 | `user_id`       | int          | Kullanıcının benzersiz kimliği      |
+| `role_id`       | int          | örneğin, "Admin" rolü için 1, "Kullanıcı" rolü için 2, vb.     | // FK user_roles
 | `username`      | varchar(50)  | Kullanıcının kullanıcı adı          |
 | `email`         | varchar(100) | Kullanıcının e-posta adresi         |
 | `password_hash` | varchar(255) | Kullanıcının şifresi (hash değeri)  |
