@@ -34,7 +34,68 @@ Authorization: Bearer your_jwt_token_here
 
 Bu açıklama, API dokümantasyonuna erişim gereksinimlerini ve JWT'nin nasıl kullanıldığını anlatır. Kullanıcılar, bu gereksinimleri karşılayarak API dokümantasyonunu görüntüleyebilir ve API endpointlerine erişebilirler.
 
-jwt için örnek kullanım için [Örnek Jwt dosyasına](jwt) göz atın
+jwt için örnek kullanım için [Örnek Jwt dosyasına](jwt) göz atın.
+
+net core ağaç yapısı örneği
+
+```css
+
+MyApp Solution
+│
+├───src
+│   ├───MyApp.Core
+│   │   ├───Domain
+│   │   │   ├───User
+│   │   │   │   ├───User.cs
+│   │   │   │   └───IUserRepository.cs
+│   │   │   └───...
+│   │   │
+│   │   ├───Application
+│   │   │   ├───Users
+│   │   │   │   ├───Commands
+│   │   │   │   │   ├───CreateUserCommand.cs
+│   │   │   │   │   ├───UpdateUserCommand.cs
+│   │   │   │   │   ├───DeleteUserCommand.cs
+│   │   │   │   │   └───...
+│   │   │   │   ├───Queries
+│   │   │   │   │   ├───GetUserQuery.cs
+│   │   │   │   │   ├───ListUsersQuery.cs
+│   │   │   │   │   └───...
+│   │   │   │   ├───UserDto.cs
+│   │   │   │   └───...
+│   │   │   │
+│   │   │   ├───Common
+│   │   │   │   └───Mapping
+│   │   │   └───...
+│   │   │
+│   ├───MyApp.Infrastructure
+│   │   ├───Persistence
+│   │   │   ├───Repositories
+│   │   │   │   ├───UserRepository.cs
+│   │   │   │   └───...
+│   │   │   └───...
+│   │   │
+│   └───MyApp.WebApi
+│       ├───Controllers
+│       │   ├───UserController.cs
+│       │   └───...
+│       │
+│       ├───Extensions
+│       ├───Filters
+│       └───...
+│
+├───tests
+│   ├───MyApp.Core.Tests
+│   ├───MyApp.Infrastructure.Tests
+│   └───MyApp.WebApi.Tests
+│
+└───...
+
+```
+
+
+
+
 
 ## Dökümantasyon İçeriği
 
