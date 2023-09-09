@@ -160,4 +160,4 @@ Bu tasarım kalıpları, yazılım projelerinizi daha düzenli ve bakımı kolay
  ┃  ┃   ┗ 📄 Program.cs
 ```
 
-Bu ağaç yapısı, projenizin farklı katmanlarını ve alt klasörlerini göstermektedir. Her katmanın ve alt klasörün aşağıdaki açıklamalarını bulabilirsiniz:
+
