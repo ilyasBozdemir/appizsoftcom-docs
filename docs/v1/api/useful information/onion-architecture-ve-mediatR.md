@@ -160,4 +160,94 @@ Bu tasarım kalıpları, yazılım projelerinizi daha düzenli ve bakımı kolay
  ┃  ┃   ┗ 📄 Program.cs
 ```
 
+# AppizsoftApp Projesi Dosya Yapısı Açıklaması
+
+Bu belge, `AppizsoftApp` adlı C# projesinin dosya yapısını ayrıntılı bir şekilde açıklamaktadır. Proje, yazılım geliştirme sürecini düzenlemek ve farklı bölümleri ayırmak amacıyla bir klasör hiyerarşisi kullanmaktadır.
+
+## Kök Klasör (`AppizsoftApp`)
+
+- `📁 src`: Projenin kaynak kodlarını içeren ana klasördür.
+
+## Çekirdek (Core)
+
+### `📦 AppizsoftApp.Application`
+
+Uygulama katmanını temsil eder ve aşağıdaki alt klasörlere sahiptir:
+
+- `📂 Dtos`: Veri transfer nesneleri (DTO'lar) için kullanılan klasördür.
+- `📂 Exceptions`: Özel istisna sınıflarının bulunduğu klasördür.
+- `📂 Features`: Uygulama özelliklerini uygulayan sınıflar için klasördür.
+- `📂 Interfaces`: Arabirimleri tanımlayan klasördür.
+- `📂 Mapping`: Nesne eşlemesi (mapping) kodları için kullanılır.
+- `📂 Wrappers`: Harici hizmetlere erişimi sarmalayan sınıfların bulunduğu klasördür.
+- `📂 Parameter`: Parametre sınıflarını içeren klasördür.
+
+### `📦 AppizsoftApp.Domain`
+
+Domain katmanını temsil eder ve aşağıdaki alt klasörlere sahiptir:
+
+- `📂 Common`: Ortak kodların bulunduğu klasördür.
+- `📂 Entities`: Veritabanı varlıklarını (entities) içeren klasördür.
+
+## Altyapı (Infrastructure)
+
+### `📦 AppizsoftApp.Persistence`
+
+Kalıcılık (veritabanı erişimi) katmanını temsil eder ve aşağıdaki alt klasörlere sahiptir:
+
+- `📂 Context`: Veritabanı bağlamı (context) sınıflarını içeren klasördür.
+  - `📄 AppizsoftAppDB.cs`: Temel veritabanı bağlamı sınıfı.
+  - `📄 AppizsoftAppTestDB.cs`: Test veritabanı bağlamı sınıfı.
+  - `📄 AppizsoftAppDevDB.cs`: Geliştirme veritabanı bağlamı sınıfı.
+- `📂 Repositories`: Veritabanı işlemlerini yapan repository sınıflarını içeren klasördür.
+  - `📄 ProductRepository.cs`: Ürünlerle ilgili veritabanı işlemlerini yapan sınıf.
+  - `📂 Migrations`: Veritabanı migrasyonları için otomatik olarak eklenen klasördür.
+  - `📄 20220101000000_InitialMigration.cs`: İlk migrasyon örneği.
+  - `📄 20220102000000_AddProductTable.cs`: Ürün tablosunu eklemek için bir migrasyon örneği ve diğer migrasyonlar.
+- `📂 Seeds`: Veritabanı başlangıç verilerini (seeds) içeren klasördür.
+  - `📄 UserDataSeeder.cs`: Kullanıcı verilerini oluşturan seed sınıfı.
+  - `📄 ProductDataSeeder.cs`: Ürün verilerini oluşturan seed sınıfı.
+- `📂 Factories`: Nesneleri oluşturmak için fabrika sınıflarını içeren klasördür.
+  - `📄 UserFactory.cs`: Kullanıcı nesnelerini oluşturan fabrika sınıfı.
+  - `📄 ProductFactory.cs`: Ürün nesnelerini oluşturan fabrika sınıfı.
+- `📂 Configurations`: Veritabanı varlık konfigürasyonlarını içeren klasördür.
+  - `📄 UserConfiguration.cs`: Kullanıcı varlığı konfigürasyonu.
+  - `📄 ProductConfiguration.cs`: Ürün varlığı konfigürasyonu.
+- `📂 Common`: Ortak kodların ve sabitlerin bulunduğu klasördür.
+  - `📄 Constants.cs`: Proje için sabitler ve genel tanımlamalar.
+
+## Altyapı (Infrastructure)
+
+### `📦 AppizsoftApp.Infrastructure`
+
+Altyapı katmanını temsil eder ve aşağıdaki alt klasörlere sahiptir:
+
+- `📂 Caching`: Önbellekleme işlemlerini içeren klasördür.
+  - `📄 ...`: Önbellekleme kodları.
+- `📂 Logging`: Günlükleme (log) işlemlerini içeren klasördür.
+  - `📄 ...`: Günlükleme kodları.
+
+## Web API (WebApi)
+
+### `📦 AppizsoftApp.WebApi`
+
+Web API katmanını temsil eder ve aşağıdaki alt klasörlere sahiptir:
+
+- `📁 Controllers`: API kontrolcü sınıflarını içeren klasördür.
+  - `📄 HomeController.cs`: Ana sayfa kontrolcüsü.
+  - `📄 ProductsController.cs`: Ürünlerle ilgili API işlemlerini yapan kontrolcü.
+  - `📄 ...`: Diğer kontrolcüler.
+- `📁 Models`: API modellerini içeren klasördür.
+  - `📄 ProductModel.cs`: Ürün modeli.
+  - `📄 ...`: Diğer modeller.
+- `📁 Middleware`: API orta yazılımlarını içeren klasördür.
+  - `📄 ErrorHandlingMiddleware.cs`: Hata işleme orta yazılımı.
+  - `📄 ...`: Diğer orta yazılımlar.
+- `📁 Filters`: API filtrelerini içeren klasördür.
+  - `📄 AuthorizationFilter.cs`: Yetkilendirme filtresi.
+  - `📄 ...`: Diğer filtreler.
+- `📄 Program.cs`: Uygulama giriş noktası.
+
+
+
 
