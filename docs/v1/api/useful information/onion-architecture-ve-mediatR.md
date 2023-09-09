@@ -1,4 +1,3 @@
-
 ## Geleneksel 3 Katmanlı Mimarinin Dezavantajları
 
 Geleneksel 3 katmanlı mimari, küçük ve orta ölçekli projeler için uygun olabilir, ancak büyük ve karmaşık projelerde bazı önemli dezavantajlar ortaya çıkar:
@@ -12,7 +11,6 @@ Geleneksel 3 katmanlı mimari, küçük ve orta ölçekli projeler için uygun o
 4. **Test Zorlukları:** Geleneksel 3 katmanlı mimari, test edilebilirlik açısından bazı zorluklar sunabilir. Özellikle iş mantığını izole etmek ve test etmek istediğinizde, veritabanı erişimini izole etmek zor olabilir.
 
 ![Onion Architecture](https://codewithmukesh.com/wp-content/uploads/2020/06/N-Tier-Architecture.png?ezimgfmt=ng:webp/ngcb56)
-
 
 ## Onion Architecture'ın Tercih Edilme Nedenleri
 
@@ -30,9 +28,7 @@ Onion Architecture, geleneksel 3 katmanlı mimarinin bu dezavantajlarını aşma
 
 Onion Architecture, büyük ve karmaşık projelerde daha iyi bir kod organizasyonu, bakım ve genişletilebilirlik sağlayarak geleneksel 3 katmanlı mimariye göre birçok avantaj sunar.
 
-
 # Onion Architecture, MediatR ve CQRS
-
 
 Bu belge, Onion Architecture, MediatR ve CQRS gibi yazılım tasarım kalıplarını anlamak ve uygulamak için bir giriş sunar. Bu tasarım kalıpları, yazılım projelerinizi daha düzenli, bakımı kolay ve ölçeklenebilir hale getirmenize yardımcı olabilir.
 
@@ -87,3 +83,81 @@ Onion Architecture, içten dışa doğru bir bağımlılık düzenlemesi sağlar
 CQRS, özellikle büyük ve karmaşık uygulamalarda işe yarar ve veri okuma ve yazma işlemlerini daha iyi ölçeklendirmenize yardımcı olabilir.
 
 Bu tasarım kalıpları, yazılım projelerinizi daha düzenli ve bakımı kolay hale getirerek geliştirme sürecinizi iyileştirebilir. İhtiyacınıza bağlı olarak, bu kalıpları projenizde kullanmayı düşünebilirsiniz.
+
+Örnek proje dizini
+
+```mathematica
+📦 AppizsoftApp
+ ┣ 📁 src
+ ┃  ┣ 📁 Core
+ ┃  ┃  ┣ 📦 AppizsoftApp.Application
+ ┃  ┃  ┃  ┣ 📂 Dtos
+ ┃  ┃  ┃  ┃  ┗ 📜 ...
+ ┃  ┃  ┃  ┣ 📂 Exceptions
+ ┃  ┃  ┃  ┃  ┗ 📜 ...
+ ┃  ┃  ┃  ┣ 📂 Features
+ ┃  ┃  ┃  ┃  ┗ 📜 ...
+ ┃  ┃  ┃  ┣ 📂 Interfaces
+ ┃  ┃  ┃  ┃  ┗ 📜 ...
+ ┃  ┃  ┃  ┣ 📂 Mapping
+ ┃  ┃  ┃  ┃  ┗ 📜 ...
+ ┃  ┃  ┃  ┣ 📂 Wrappers
+ ┃  ┃  ┃  ┃  ┗ 📜 ...
+ ┃  ┃  ┃  ┗ 📂 Parameter
+ ┃  ┃  ┃  ┃  ┗ 📜 ...
+ ┃  ┃  ┗ 📦 AppizsoftApp.Domain
+ ┃  ┃  ┃  ┣ 📂 Common
+ ┃  ┃  ┃  ┃  ┗ 📜 ...
+ ┃  ┃  ┃  ┗ 📂 Entities
+ ┃  ┃  ┃  ┃  ┗ 📜 ...
+ ┃  ┣ 📁 Infrastructure
+ ┃  ┃  ┣ 📦 AppizsoftApp.Persistence
+ ┃  ┃  ┃  ┣ 📂 Context
+ ┃  ┃  ┃  ┃  ┣ 📜 AppizsoftAppDB.cs
+ ┃  ┃  ┃  ┃  ┣ 📜 AppizsoftAppTestDB.cs
+ ┃  ┃  ┃  ┃  ┗ 📜 AppizsoftAppDevDB.cs
+ ┃  ┃  ┃  ┣ 📂 Repositories
+ ┃  ┃  ┃  ┃  ┗ 📜 ProductRepository.cs
+ ┃  ┃  ┃  ┣ 📂 Migrations
+ ┃  ┃  ┃  ┣ 📜 20220101000000_InitialMigration.cs
+ ┃  ┃  ┃  ┃  ┣ 📜 20220102000000_AddProductTable.cs
+ ┃  ┃  ┃  ┃  ┗ 📜 ...
+ ┃  ┃  ┃  ┣ 📂 Seeds
+ ┃  ┃  ┃  ┃  ┣ 📜 UserDataSeeder.cs
+ ┃  ┃  ┃  ┃  ┗ 📜 ProductDataSeeder.cs
+ ┃  ┃  ┃  ┣ 📂 Factories
+ ┃  ┃  ┃  ┃  ┣ 📜 UserFactory.cs
+ ┃  ┃  ┃  ┃  ┗ 📜 ProductFactory.cs
+ ┃  ┃  ┃  ┣ 📂 Configurations
+ ┃  ┃  ┃  ┃  ┣ 📜 UserConfiguration.cs
+ ┃  ┃  ┃  ┃  ┗ 📜 ProductConfiguration.cs
+ ┃  ┃  ┃  ┣ 📂 Common
+ ┃  ┃  ┃  ┃  ┣ 📜 Constants.cs
+ ┃  ┃  ┃  ┃  ┗ 📜 ...
+ ┃  ┃  ┃  ┗ 📂 Logs
+ ┃  ┃  ┃     ┣ 📜 DatabaseLog.txt
+ ┃  ┃  ┃     ┗ 📜 ...
+ ┃  ┃  ┗ 📦 AppizsoftApp.Infrastructure
+ ┃  ┃  ┃  ┣ 📂 Caching
+ ┃  ┃  ┃  ┃  ┗ 📜 ...
+ ┃  ┃  ┃  ┣ 📂 Logging
+ ┃  ┃  ┃  ┃  ┗ 📜 ...
+ ┃  ┣ 📦 AppizsoftApp.WebApi
+ ┃  ┃   ┣ 📁 Controllers
+ ┃  ┃   ┃  ┣ 📄 HomeController.cs
+ ┃  ┃   ┃  ┣ 📄 ProductsController.cs
+ ┃  ┃   ┃  ┗ 📄 ...
+ ┃  ┃   ┣ 📁 Models
+ ┃  ┃   ┃  ┗ 📄 ProductModel.cs
+ ┃  ┃   ┃  ┗ 📄 ...
+ ┃  ┃   ┣ 📁 Middleware
+ ┃  ┃   ┃  ┗ 📄 ErrorHandlingMiddleware.cs
+ ┃  ┃   ┃  ┗ 📄 ...
+ ┃  ┃   ┣ 📁 Filters
+ ┃  ┃   ┃  ┗ 📄 AuthorizationFilter.cs
+ ┃  ┃   ┃  ┗ 📄 ...
+ ┃  ┃   ┣ 📁 ...
+ ┃  ┃   ┗ 📄 Program.cs
+```
+
+Bu ağaç yapısı, projenizin farklı katmanlarını ve alt klasörlerini göstermektedir. Her katmanın ve alt klasörün aşağıdaki açıklamalarını bulabilirsiniz:
