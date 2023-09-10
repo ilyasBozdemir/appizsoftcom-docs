@@ -251,3 +251,43 @@ Web API katmanını temsil eder ve aşağıdaki alt klasörlere sahiptir:
 
 
 
+```scss
+
+Onion Architecture
+│
+├── Çekirdek (Core) Katmanı
+│   ├── Varlık Sınıfları
+│   ├── Temel Hizmetler
+│   └── Soyutlamalar
+│
+├── Uygulama (Application) Katmanı
+│   ├── İş Mantığı Servisleri
+│   ├── Kullanıcı Arabirimi (UI)
+│   └── Uygulama Servisleri
+│
+├── Altyapı (Persistence) Katmanı
+│   ├── Veritabanı Bağlantısı
+│   ├── Veritabanı İşlemleri
+│   └── Veri Depolama
+│
+├── Altyapı (Infrastructure) Katmanı
+│   ├── Dış Servis Entegrasyonları
+│   ├── Uygulama Yapılandırması
+│   └── Diğer Altyapı İşlemleri
+│
+└── Sunum (Presentation) Katmanı
+    ├── Kullanıcı Arayüzü
+    ├── Web API
+    └── Kullanıcı Etkileşimi
+
+
+```
+
+## Cross-Cutting Concerns ve Aspect 
+
+| Kavram                        | Benzerlikler                                                                                               | Farklar                                     |
+|-------------------------------|------------------------------------------------------------------------------------------------------------|--------------------------------------------|
+| **Cross-Cutting Concerns**    | - Her ikisi de bir uygulamanın farklı yerlerinde tekrar eden işlevleri temsil eder.                        | - Çapraz kesen endişeler, uygulamanın farklı yerlerinde ortaya çıkan işlevlerdir. Örneğin, günlükleme, yetkilendirme, hata yönetimi vb. çapraz kesen endişelere örnektir. |
+|                               | - İş mantığı katmanı veya sunum katmanı gibi farklı yerlerde tekrar edebilirler.                             |                                            |
+| **Aspect**                    | - Aspect, bir uygulamanın çapraz kesen endişelerini ele almak için kullanılan bir programlama paradigmasıdır. | - Aspect-Oriented Programming (AOP), aspectleri kullanarak çapraz kesen endişeleri ele almanın bir yolunu sunar. |
+|                               | - İşlevlerin ortak yönlerini temsil eder ve bu yönleri tekrar tekrar uygulamanın farklı noktalarında eklemek yerine merkezi bir şekilde yönetmeyi sağlar. |                                       |
