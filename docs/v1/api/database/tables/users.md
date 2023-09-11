@@ -11,7 +11,8 @@ Bu tablo, kullanıcıların bilgilerini saklamak amacıyla kullanılır. Her kul
 | `username`      | varchar(50)  | Kullanıcının kullanıcı adı          |
 | `email`         | varchar(100) | Kullanıcının e-posta adresi         |
 | `password_hash` | varchar(255) | Kullanıcının şifresi (hash değeri)  |
-| `full_name`     | varchar(100) | Kullanıcının tam adı                |
+| `name`     | varchar(100) | Kullanıcının adı                |
+| `last_name`     | varchar(100) | Kullanıcının soyadı                |
 | `created_at`    | datetime     | Kullanıcının hesap oluşturma tarihi |
 | `updated_at`    | datetime     | Kullanıcının son güncelleme tarihi  |
 | `last_login`    | datetime     | Son oturum açma tarihi              |

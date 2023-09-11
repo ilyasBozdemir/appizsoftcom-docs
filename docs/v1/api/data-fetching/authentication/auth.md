@@ -13,11 +13,16 @@ Kullanıcı girişi yapmak için kullanılır.
 
 ```http
 POST /api/v1/auth/login
+
 Content-Type: application/json
 
+```
+#### Gövde
+
+```json
 {
-  "username": "kullanici_adi",
-  "password": "parola"
+  "username": "kullanici123",
+  "password": "mysecretpassword",
 }
 ```
 
@@ -40,6 +45,6 @@ Kullanıcının oturumunu sonlandırmak için kullanılır.
 Şifre sıfırlama talebi için kullanılır.
 
 - **Yöntem**: POST
-- **Endpoint**: `/api/v1/auth/forgot-password`
+- **Endpoint**: `/api/v1/auth/reset-password`
 
 --- devamı gelicek

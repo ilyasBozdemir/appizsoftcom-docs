@@ -14,11 +14,21 @@ Yeni bir kullanıcı eklemek için bu endpoint'i kullanabilirsiniz.
 **İstek Gövdesi (Request Body):**
 
 ```json
-{
-  "username": "john_doe",
-  "password": "mysecretpassword",
-  "email": "john@example.com"
+
+  {
+   
+    "role_id": 2,
+    "username": "kullanici123",
+    "email": "kullanici123@example.com",
+    "password_hash": "hashed_password_value",
+    "name": "John",
+    "last_name": "Doe",
+    "created_at": "2023-09-11T12:30:00",
+    "updated_at": "2023-09-11T14:45:00",
+    "last_login": "2023-09-11T14:30:00"
 }
+
+
 ```
 #### Yanıt (Response):
 Başarılı bir giriş durumunda, aşağıdaki gibi bir yanıt alırsınız:
