@@ -1,6 +1,79 @@
-## Kimlik Doğrulama İşlemleri (Auth)
+# Kimlik Doğrulama İşlemleri (Auth)
+## Özet
 
-# Auth Register
+### Kullanıcı (User) Tablosu
+
+Kullanıcılar için temel bilgilerin saklandığı tablodur.
+
+| Sütun Adı     | Tür          | Açıklama                            |
+| ------------- | ------------ | ----------------------------------- |
+| `user_id`     | int          | Kullanıcının benzersiz kimliği      |
+| `role_id`     | int          | Kullanıcının rol kimliği (örneğin, "Admin" rolü için 1, "Kullanıcı" rolü için 2, vb.)  |
+| `username`    | varchar(50)  | Kullanıcının kullanıcı adı          |
+| `email`       | varchar(100) | Kullanıcının e-posta adresi         |
+| `password_hash`| varchar(255)| Kullanıcının şifresi (hash değeri)  |
+| `name`        | varchar(100) | Kullanıcının adı                    |
+| `last_name`   | varchar(100) | Kullanıcının soyadı                 |
+| `created_at`  | datetime     | Kullanıcının hesap oluşturma tarihi |
+| `updated_at`  | datetime     | Kullanıcının son güncelleme tarihi  |
+| `last_login`  | datetime     | Son oturum açma tarihi              |
+
+### Kullanıcı Auth Endpointleri
+
+Kullanıcı kimlik doğrulama (auth) işlemleri için aşağıdaki endpointler kullanılabilir:
+
+
+#### 1. Kullanıcı Kayıt (Register)
+
+Bu endpoint, kullanıcıların kayıt olmasını sağlar.
+
+- URL: `/api/v1/auth/register`
+- Yöntem: POST
+#### 2. Kullanıcı Girişi (Login)
+
+Kullanıcıların hesaplarına giriş yapmalarını sağlar.
+
+- URL: `/api/v1/auth/login`
+- Yöntem: POST
+
+#### 3. Oturumu Sonlandırma (Logout)
+
+Kullanıcıların oturumlarını sonlandırmalarını sağlar.
+
+- URL: `/api/v1/auth/logout`
+- Yöntem: POST
+
+#### 4. Şifremi Unuttum (Forgot Password)
+
+Kullanıcıların şifrelerini sıfırlamalarını sağlar.
+
+- URL: `/api/v1/auth/forgot-password`
+- Yöntem: POST
+
+#### 5. Şifre Sıfırlama (Reset Password)
+
+Kullanıcıların şifrelerini sıfırlama işlemi için kullanılır.
+
+- URL: `/api/v1/auth/reset-password`
+- Yöntem: POST
+
+#### 6. Token Yenileme (Refresh Token)
+
+Geçerli bir erişim tokenini yeniler.
+
+- URL: `/api/v1/auth/refresh-token`
+- Yöntem: POST
+
+####  7. Hesap Doğrulama (Verify Email)
+
+Kullanıcıların e-posta adreslerini doğrulamalarını sağlar.
+
+- URL: `/api/v1/auth/verify-email`
+- Yöntem: POST
+
+#### 8. İki Faktörlü Kimlik Doğrulama (Two-Factor Authentication)
+
+# 1. Auth Register
 
 Bu endpoint, kullanıcıların kayıt olmasını sağlar.
 
@@ -19,9 +92,6 @@ Bu endpoint, kullanıcıların kayıt olmasını sağlar.
 | `password_hash` | varchar(255) | Kullanıcının şifresi (hash değeri)  |
 | `name`     | varchar(100) | Kullanıcının adı                |
 | `last_name`     | varchar(100) | Kullanıcının soyadı                |
-| `created_at`    | datetime     | Kullanıcının hesap oluşturma tarihi |
-| `updated_at`    | datetime     | Kullanıcının son güncelleme tarihi  |
-| `last_login`    | datetime     | Son oturum açma tarihi              |
 
 ## Başarı Durumu (HTTP 200)
 
@@ -55,7 +125,7 @@ Eğer e-posta adresi zaten kayıtlıysa veya gerekli parametreler eksikse, hata 
 
 Bu bölümde, kimlik doğrulama işlemleri için kullanılan API endpointleri açıklanmaktadır.
 
-### Giriş (Login)
+##  2. Giriş (Login)
 
 Kullanıcı girişi yapmak için kullanılır.
 
@@ -78,5 +148,6 @@ Content-Type: application/json
   "password": "mysecretpassword",
 }
 ```
+
 
 
