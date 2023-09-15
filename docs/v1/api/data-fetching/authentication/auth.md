@@ -50,28 +50,22 @@ Kullanıcıların şifrelerini sıfırlamalarını sağlar.
 - URL: `/api/v1/auth/forgot-password`
 - Yöntem: POST
 
-#### 5. Şifre Sıfırlama (Reset Password)
 
-Kullanıcıların şifrelerini sıfırlama işlemi için kullanılır.
-
-- URL: `/api/v1/auth/reset-password`
-- Yöntem: POST
-
-#### 6. Token Yenileme (Refresh Token)
+#### 5. Token Yenileme (Refresh Token)
 
 Geçerli bir erişim tokenini yeniler.
 
 - URL: `/api/v1/auth/refresh-token`
 - Yöntem: POST
 
-####  7. Hesap Doğrulama (Verify Email)
+####  6. Hesap Doğrulama (Verify Email)
 
 Kullanıcıların e-posta adreslerini doğrulamalarını sağlar.
 
 - URL: `/api/v1/auth/verify-email`
 - Yöntem: POST
 
-#### 8. İki Faktörlü Kimlik Doğrulama (Two-Factor Authentication)
+#### 7. İki Faktörlü Kimlik Doğrulama (Two-Factor Authentication)
 
 # 1. Auth Register
 
@@ -148,6 +142,3 @@ Content-Type: application/json
   "password": "mysecretpassword",
 }
 ```
-
-
-
