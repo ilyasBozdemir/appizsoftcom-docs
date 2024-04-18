@@ -10,7 +10,7 @@ Geleneksel 3 katmanlı mimari, küçük ve orta ölçekli projeler için uygun o
 
 4. **Test Zorlukları:** Geleneksel 3 katmanlı mimari, test edilebilirlik açısından bazı zorluklar sunabilir. Özellikle iş mantığını izole etmek ve test etmek istediğinizde, veritabanı erişimini izole etmek zor olabilir.
 
-![Onion Architecture](https://codewithmukesh.com/wp-content/uploads/2020/06/N-Tier-Architecture.png?ezimgfmt=ng:webp/ngcb56)
+![Onion Architecture](https://miro.medium.com/v2/resize:fit:720/format:webp/1*MSmpndkRsrNXFao0RlyU2A.png)
 
 ## Onion Architecture'ın Tercih Edilme Nedenleri
 
